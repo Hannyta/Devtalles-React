@@ -26,25 +26,21 @@ export const LoginPage = () => {
               />
             </Grid>
 
-            <Grid size={{ xs: 12 }}>
-              <Button variant="contained" fullWidth sx={{ mt: 1 }}>
+              <Grid size={{ xs: 12 }}>
+                <Button variant="contained" fullWidth>
                 Ingresar
-              </Button>
-            </Grid>
+                </Button>
+              </Grid>
 
-            <Grid size={{ xs: 12 }}>
-              <Button
-                variant="outlined"
-                fullWidth
-                startIcon={<Google />}
-                sx={{ mt: 0.1 }}
-              >
-                Google
-              </Button>
-            </Grid>
-
-            <Grid size={{ xs: 12 }} sx={{ mt: 1 }}>
-              <Link component={RouterLink} to="/register">
+              <Grid size={{ xs: 12 }}>
+                <Button variant="outlined" fullWidth>
+                  <Google />
+                  <Typography sx={{ ml: 1}}> Google </Typography>
+                </Button>
+              </Grid>
+            
+            <Grid container direction='row' justifyContent='end'>
+              <Link component={RouterLink} color='inherit' to="/auth/register">
                 Crear una cuenta
               </Link>
             </Grid>
