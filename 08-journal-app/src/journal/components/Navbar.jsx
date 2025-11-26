@@ -1,5 +1,5 @@
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
-import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Grid, IconButton, Toolbar, Typography, Box } from '@mui/material';
 
 export const Navbar = ({ drawerWidth = 240 }) => {
   return (
@@ -19,7 +19,7 @@ export const Navbar = ({ drawerWidth = 240 }) => {
                 <MenuOutlined/>
             </IconButton>
 
-            <Grid container direction='row' justifyContent='space-between' alignItems='center'>
+            <Grid container display='inline-flex' direction='row' justifyContent='space-between' alignItems='center'>
                 <Typography variant='h6' noWrap component='div'> JournalApp</Typography>
 
                 <IconButton color='error'>
