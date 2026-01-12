@@ -1,12 +1,46 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Grid, Link, TextField, Typography } from '@mui/material';
-import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../layout/AuthLayout';
+import { useForm } from '../../hooks/useFoorm';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { startCreatingUserWithEmailPassword } from '../../store/auth';
+
+const formData = {
+  displayName: '',
+  email: '',
+  password: '',
+};
+
+const formValidations = {
+  displayName: [ (value) => value.length >= 1, 'El nombre es obligatorio.' ],
+  email: [ (value) => value.includes('@'), 'El correo debe tener un @.' ],
+  password: [ (value) => value.length >= 6, 'La contraseña debe tener más de 6 letras.' ],
+};
 
 export const RegisterPage = () => {
+
+  const dispatch = useDispatch();
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const {
+    displayName, email, password, onInputChange, formState,
+    displayNameValid, emailValid, passwordValid, isFormValid 
+  } = useForm(formData, formValidations );
+  
+  const onSubmit = ( event ) => {
+    event.preventDefault();
+    setFormSubmitted(true);
+
+    if ( !isFormValid ) return;
+    
+    dispatch( startCreatingUserWithEmailPassword( formState ) );
+  }
+
   return (
     <AuthLayout title="Crear cuenta">
-      <form>
+      <form onSubmit={ onSubmit }>
           <Grid container spacing={2}>
 
             <Grid size={{ xs: 12, sm: 12 }}>
@@ -15,6 +49,11 @@ export const RegisterPage = () => {
                 type="text"
                 placeholder="Pedro Perez"
                 fullWidth
+                name="displayName"
+                value={ displayName }
+                onChange={ onInputChange }
+                error={ !!displayNameValid && formSubmitted }
+                helperText={ displayNameValid }
               />
             </Grid>
 
@@ -24,6 +63,11 @@ export const RegisterPage = () => {
                 type="email"
                 placeholder="correo@ejemplo.com"
                 fullWidth
+                name="email"
+                value={ email }
+                onChange={ onInputChange }
+                error={ !!emailValid && formSubmitted }
+                helperText={ emailValid }
               />
             </Grid>
 
@@ -33,12 +77,19 @@ export const RegisterPage = () => {
                 type="password"
                 placeholder="********"
                 fullWidth
+                name="password"
+                value={ password }
+                onChange={ onInputChange }
+                error={ !!passwordValid && formSubmitted }
+                helperText={ passwordValid }
               />
             </Grid>
-
               <Grid size={{ xs: 12 }}>
-                <Button variant="contained" fullWidth>
-                  Crear cuenta
+                <Button 
+                  type="submit"
+                  variant="contained" 
+                  fullWidth>
+                    Crear cuenta
                 </Button>
               </Grid>
             
