@@ -1,39 +1,39 @@
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
-import { Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks/useFoorm';
-import { checkingAuthentication, startGoogleSignIn } from '../../store/auth';
+import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 
 export const LoginPage = () => {
 
-  const { status } = useSelector( state => state.auth );
+  const { status, errorMessage } = useSelector( state => state.auth );
 
   const dispatch = useDispatch();
   const { email, password, onInputChange } = useForm({
-    email: 'hanny@test.com',
-    password: '123456'
+    email: '',
+    password: ''
   });
 
   const isAuthenticating = useMemo( () => status === 'checking', [status] );
 
   const onSubmit = ( event ) => {
     event.preventDefault();
-    console.log({ email, password });
-    dispatch( checkingAuthentication( ) );
+    //console.log({ email, password });
+    dispatch( startLoginWithEmailPassword({ email, password }) );
   }
 
   const onGoogleSignIn = () => {
-    console.log('Google Sign-In');
+    console.log('onGoogleSignIn');
     dispatch( startGoogleSignIn() );
   }
 
   return (
     <AuthLayout title="Login">
-      <form onSubmit={ onSubmit }>
-          <Grid container spacing={2}>
+      <form onSubmit={ onSubmit } className='animate__animated animate__fadeIn animate__faster'>
+        <Grid container spacing={2}>
             <Grid size={{ xs: 12, sm: 12 }}>
               <TextField
                 label="Correo"
@@ -50,13 +50,20 @@ export const LoginPage = () => {
               <TextField
                 label="Contraseña"
                 type="password"
-                placeholder="********"
+                placeholder="Contraseña"
                 fullWidth
                 name="password"
                 value={ password }
                 onChange={ onInputChange }
               />
             </Grid>
+
+            <Grid
+              container
+              display={ !!errorMessage ? '' : 'none' }
+              sx={{ mt: 1 }}>
+                <Grid
+              </Grid>
 
               <Grid size={{ xs: 12 }}>
                 <Button 
@@ -87,7 +94,7 @@ export const LoginPage = () => {
               </Link>
             </Grid>
           </Grid>
-        </form>
+      </form>
     </AuthLayout>
   );
 };
