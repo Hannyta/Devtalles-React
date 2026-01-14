@@ -62,7 +62,9 @@ export const LoginPage = () => {
               container
               display={ !!errorMessage ? '' : 'none' }
               sx={{ mt: 1 }}>
-                <Grid
+                <Grid xs={12}>
+                  <Alert severity="error">{ errorMessage }</Alert>
+                </Grid>
               </Grid>
 
               <Grid size={{ xs: 12 }}>
@@ -72,16 +74,16 @@ export const LoginPage = () => {
                   fullWidth 
                   disabled={ isAuthenticating }
                 >
-                Ingresar
+                Login
                 </Button>
               </Grid>
 
               <Grid size={{ xs: 12 }}>
                 <Button 
-                  variant="outlined" 
+                  disabled={ isAuthenticating}
+                  variant="contained" 
                   fullWidth 
                   onClick={ onGoogleSignIn }
-                  disabled={ isAuthenticating}
                 >
                   <Google />
                   <Typography sx={{ ml: 1}}> Google </Typography>
