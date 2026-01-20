@@ -12,11 +12,11 @@ export const NothingSelectedView = () => {
         sx={{ minHeight: 'calc(100vh - 110px)', backgroundColor: 'primary.main', borderRadius: 3}}
         className="animate__animated animate__fadeIn animate__faster"
     >
-        <Grid item xs={ 12 }>
-            <StarOutline sx={{ fontSize: 100, color: 'white' }} />
+        <Grid size={ 12 } textAlign="center">
+            <StarOutline sx={{ fontSize: 100, color: 'white'}} />
         </Grid>
-        <Grid item xs={ 12 }>
-            <Typography color="white" variant='h5'>Selecciona o crea una estrella</Typography>
+        <Grid size={ 12 }>
+            <Typography color="white" variant='h5' alignContent="center" textAlign="center">Selecciona o crea una estrella</Typography>
         </Grid>
     </Grid>
 
