@@ -1,6 +1,6 @@
 import { FirebaseDB} from "../../firebase/config";
 import { collection, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
-import { addNewEmtyNote, deleteNoteById, savingNewNote, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNote } from "./journalSlice";
+import { addNewEmptyNote, deleteNoteById, savingNewNote, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNote } from "./journalSlice";
 import { fileUpload, loadNotes } from "../../helpers";
 
 export const startNewNote = () => {
@@ -25,7 +25,7 @@ export const startNewNote = () => {
         newNote.id = newDoc.id;
         
         // dispatch( activarNote )
-        dispatch( addNewEmtyNote( newNote ) );
+        dispatch( addNewEmptyNote( newNote ) );
         dispatch( setActiveNote( newNote ) );
     }
 }

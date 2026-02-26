@@ -19,7 +19,7 @@ export const journalSlice = createSlice({
     savingNewNote: (state) => {
       state.isSaving = true;
     },
-    addNewEmtyNote: (state, action) => {
+    addNewEmptyNote: (state, action) => {
       state.notes.push( action.payload );
       state.isSaving = false;
     },
@@ -66,7 +66,7 @@ export const journalSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { 
-    addNewEmtyNote, 
+    addNewEmptyNote, 
     clearNotesLogout,
     deleteNoteById,
     savingNewNote,

@@ -80,5 +80,3 @@ describe('Prueba en AuthThunks', () => {
         expect( dispatch ).toHaveBeenCalledWith( logout() );
     })
 });
-
-    
