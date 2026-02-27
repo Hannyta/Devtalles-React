@@ -21,12 +21,14 @@ describe('Pruebas en Journal Thunks', () => {
             title: '',
             id: expect.any( String ),
             date: expect.any( Number ),
+            imageUrls: [],
         }));
         expect( dispatch ).toHaveBeenCalledWith( setActiveNote({
             body: '',
             title: '',
             id: expect.any( String ),
             date: expect.any( Number ),
+            imageUrls: [],
         }));
 
     });
