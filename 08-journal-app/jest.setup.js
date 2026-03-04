@@ -1,7 +1,8 @@
 // En caso de necesitar la implementación del FetchAPI
-import 'whatwg-fetch';
+import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
+import 'setimmediate';
+import { TextEncoder, TextDecoder } from 'util';
 
-const { TextEncoder, TextDecoder } = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
@@ -10,5 +11,5 @@ require('dotenv').config({
 });
 
 jest.mock('./src/helpers/getEnvironments', () => ({
-    getEnvironments: () => ({ ...process.env})
+    getEnvironments: () => ({ ...process.env })
 }));

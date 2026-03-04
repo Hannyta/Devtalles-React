@@ -5945,6 +5945,7 @@ __metadata:
     react-dom: "npm:^19.2.0"
     react-redux: "npm:^9.2.0"
     react-router-dom: "npm:^7.13.1"
+    setimmediate: "npm:^1.0.5"
     sweetalert2: "npm:^11.26.18"
     vite: "npm:^7.2.2"
     whatwg-fetch: "npm:^3.6.20"
@@ -7169,6 +7170,13 @@ __metadata:
   version: 2.7.2
   resolution: "set-cookie-parser@npm:2.7.2"
   checksum: 10c0/4381a9eb7ee951dfe393fe7aacf76b9a3b4e93a684d2162ab35594fa4053cc82a4d7d7582bf397718012c9adcf839b8cd8f57c6c42901ea9effe33c752da4a45
+  languageName: node
+  linkType: hard
+
+"setimmediate@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "setimmediate@npm:1.0.5"
+  checksum: 10c0/5bae81bfdbfbd0ce992893286d49c9693c82b1bcc00dcaaf3a09c8f428fdeacf4190c013598b81875dfac2b08a572422db7df779a99332d0fce186d15a3e4d49
   languageName: node
   linkType: hard
 
