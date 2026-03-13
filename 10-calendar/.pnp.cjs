@@ -46,6 +46,7 @@ const RAW_RUNTIME_STATE =
           ["react-modal", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:3.16.3"],\
           ["react-redux", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:9.2.0"],\
           ["react-router-dom", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:6.30.3"],\
+          ["sweetalert2", "npm:11.26.22"],\
           ["vite", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:7.3.1"]\
         ],\
         "linkType": "SOFT"\
@@ -1529,6 +1530,7 @@ const RAW_RUNTIME_STATE =
           ["react-modal", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:3.16.3"],\
           ["react-redux", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:9.2.0"],\
           ["react-router-dom", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:6.30.3"],\
+          ["sweetalert2", "npm:11.26.22"],\
           ["vite", "virtual:10acf1b7f3fecc7302c7241c52db2c70776be2f9951adb8487c56fc05bfe8ecb91d9a3e3d04fb3ae602751e8a233c019a47b9351bbee93bcc71a082848df8773#npm:7.3.1"]\
         ],\
         "linkType": "SOFT"\
@@ -3361,6 +3363,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["has-flag", "npm:4.0.0"],\
           ["supports-color", "npm:7.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["sweetalert2", [\
+      ["npm:11.26.22", {\
+        "packageLocation": "../../../Users/hanny/AppData/Local/Yarn/Berry/cache/sweetalert2-npm-11.26.22-26459722f6-10c0.zip/node_modules/sweetalert2/",\
+        "packageDependencies": [\
+          ["sweetalert2", "npm:11.26.22"]\
         ],\
         "linkType": "HARD"\
       }]\

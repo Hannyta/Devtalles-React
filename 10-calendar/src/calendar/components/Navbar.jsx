@@ -4,7 +4,7 @@ export const Navbar = () => {
         <span className="navbar-brand">
             <i className="fas fa-calendar-alt"></i>
             &nbsp;
-            Fernando
+            Hanny
         </span>
 
         <button className="btn btn-outline-danger">
