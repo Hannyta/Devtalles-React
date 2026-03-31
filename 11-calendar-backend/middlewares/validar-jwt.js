@@ -1,5 +1,5 @@
-const { response } = required('express');
-const jwt = required('jsonwebtoken');
+const { response } = require('express');
+const jwt = require('jsonwebtoken');
 
 const validarJWT = ( req, res = response, next ) => {
 
@@ -31,8 +31,11 @@ const validarJWT = ( req, res = response, next ) => {
         });
     }
 
+
+
     next();
 }
+
 
 module.exports = {
     validarJWT

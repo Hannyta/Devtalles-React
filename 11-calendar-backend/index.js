@@ -1,20 +1,29 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
+const { dbConnection } = require('./database/config');
 
-console.log(process.env);
-
-//Crear el servidor de express
+// Crear el servidor de express
 const app = express();
 
-//Rutas 
-app.get('/', (req, res) => {
-    console.log('Se requiere /');
-    res.json({
-      ok: true,
-    })
-});
+// Base de datos
+dbConnection();
 
-//Iniciar el servidor
-app.listen(4000, () => {
-  console.log(`Servidor corriendo en puerto ${4000}`);
+// CORS
+app.use(cors())
+
+// Directorio Público
+app.use( express.static('public') );
+
+// Lectura y parseo del body
+app.use( express.json() );
+
+// Rutas
+app.use('/api/auth', require('./routes/auth') );
+app.use('/api/events', require('./routes/events') );
+
+
+// Escuchar peticiones
+app.listen( process.env.PORT, () => {
+    console.log(`Servidor corriendo en puerto ${ process.env.PORT }`);
 });
