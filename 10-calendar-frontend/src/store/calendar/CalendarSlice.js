@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { addHours } from 'date-fns';
 // const tempEvent =   {
-//     _id: new Date().getTime(),
+//     id: new Date().getTime(),
 //     title: 'Cumpleaños del Jefe',
 //     notes: 'Hay que comprar el pastel',
 //     start: new Date(),
@@ -12,6 +12,7 @@ import { createSlice } from '@reduxjs/toolkit';
 //       name: 'Fernando'
 //     }
 // };
+
 
 export const calendarSlice = createSlice({
     name: 'calendar',
@@ -62,6 +63,7 @@ export const calendarSlice = createSlice({
         }
     }
 });
+
 
 // Action creators are generated for each case reducer function
 export const {
